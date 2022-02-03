@@ -59,7 +59,6 @@
 #define X_AXIS_ENABLE                      0x01
 #define Y_AXIS_ENABLE                      0x02
 #define FORCE_FEEDBACK_MAXGAIN              100
-#define DEG_TO_RAD              ((float)((float)3.14159265359 / 180.0))
 
 struct Gains{
     uint8_t totalGain         = FORCE_FEEDBACK_MAXGAIN;
@@ -141,7 +140,7 @@ private:
 	int16_t                  _steeringMaximum = JOYSTICK_DEFAULT_SIMULATOR_MAXIMUM;
 
 	uint8_t                  _hidReportId;
-	uint8_t                  _hidReportSize; 
+	uint8_t                  _hidReportSize;
 
 	//force feedback gain
 	Gains* m_gains;
@@ -188,7 +187,7 @@ public:
 
 	void begin(bool initAutoSendState = true);
 	void end();
-	
+
 	// Set Range Functions
 	inline void setXAxisRange(int16_t minimum, int16_t maximum)
 	{
